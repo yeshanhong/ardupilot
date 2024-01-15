@@ -1009,6 +1009,7 @@ private:
 #if !HAL_MINIMIZE_FEATURES && OPTFLOW == ENABLED
     ModeFlowHold mode_flowhold;
 #endif
+    ModeDrawStar mode_DrawStar;
 
     // mode.cpp
     Mode *mode_from_mode_num(const uint8_t mode);
