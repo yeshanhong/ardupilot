@@ -16,7 +16,7 @@ bool Copter::ModeDrawStar::init(bool ignore_checks)
 // 生成五角星航线
 void Copter::ModeDrawStar::generate_path()
 {
-    float radius_cm = 1000.0;
+    float radius_cm = g2.star_radius_cm;
 
     wp_nav->get_wp_stopping_point(path[0]);
 
@@ -31,13 +31,14 @@ void Copter::ModeDrawStar::generate_path()
 // 开始位置控制
 void Copter::ModeDrawStar::pos_control_start()
 {
+    //初始化路径点和样条控制器
     // initialise waypoint and spline controller
     wp_nav->wp_and_spline_init();
-
+    //不需要检查返回状态，因为没有使用地形数据
     // no need to check return status because terrain data is not used
     wp_nav->set_wp_destination(path[0], false);
 
-    // initialise yaw
+    // initialise yaw 预置偏航
     auto_yaw.set_mode_to_default(false);
 }
 

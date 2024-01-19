@@ -93,6 +93,7 @@ enum aux_sw_func {
 #define HIL_MODE_SENSORS                1
 
 // Auto Pilot Modes enumeration
+// 自动驾驶模式枚举
 enum control_mode_t {
     STABILIZE =     0,  // manual airframe angle with manual throttle
     ACRO =          1,  // manual body-frame angular rate with manual throttle

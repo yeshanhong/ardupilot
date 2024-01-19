@@ -219,12 +219,15 @@ void Copter::loop()
 void Copter::fast_loop()
 {
     // update INS immediately to get current gyro data populated
+    // 先更新惯性导航
     ins.update();
 
     // run low level rate controllers that only require IMU data
+    //运行姿态控制器
     attitude_control->rate_controller_run();
 
     // send outputs to the motors library immediately
+    //输出电机信号
     motors_output();
 
     // run EKF state estimator (expensive)

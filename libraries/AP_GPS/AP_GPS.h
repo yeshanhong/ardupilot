@@ -101,7 +101,7 @@ public:
         GPS_OK_FIX_3D = GPS_FIX_TYPE_3D_FIX,              ///< Receiving valid messages and 3D lock
         GPS_OK_FIX_3D_DGPS = GPS_FIX_TYPE_DGPS,           ///< Receiving valid messages and 3D lock with differential improvements
         GPS_OK_FIX_3D_RTK_FLOAT = GPS_FIX_TYPE_RTK_FLOAT, ///< Receiving valid messages and 3D RTK Float
-        GPS_OK_FIX_3D_RTK_FIXED = GPS_FIX_TYPE_RTK_FIXED, ///< Receiving valid messages and 3D RTK Fixed
+        GPS_OK_FIX_3D_RTK_FIXED = GPS_FIX_TYPE_RTK_FIXED, ///最终状态< Receiving valid messages and 3D RTK Fixed
     };
 
     // GPS navigation engine settings. Not all GPS receivers support
@@ -126,6 +126,7 @@ public:
       The GPS_State structure is filled in by the backend driver as it
       parses each message from the GPS.
      */
+    //这是GPS驱动对上层的接口
     struct GPS_State {
         uint8_t instance; // the instance number of this GPS
 
@@ -136,7 +137,7 @@ public:
         Location location;                  ///< last fix location
         float ground_speed;                 ///< ground speed in m/sec
         float ground_course;                ///< ground course in degrees
-        uint16_t hdop;                      ///< horizontal dilution of precision in cm
+        uint16_t hdop;                      ///水平精度因子< horizontal dilution of precision in cm
         uint16_t vdop;                      ///< vertical dilution of precision in cm
         uint8_t num_sats;                   ///< Number of visible satellites
         Vector3f velocity;                  ///< 3D velocity in m/s, in NED format

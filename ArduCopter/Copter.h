@@ -94,6 +94,7 @@
 #include "AP_Arming.h"
 
 // libraries which are dependent on #defines in defines.h and/or config.h
+// 在define .h和/或config.h中依赖#define的库
 #if BEACON_ENABLED == ENABLED
  #include <AP_Beacon/AP_Beacon.h>
 #endif

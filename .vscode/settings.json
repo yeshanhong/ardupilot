@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "istream": "cpp",
+        "functional": "cpp",
+        "associative_base": "cpp",
+        "sstream": "cpp",
+        "*.tcc": "cpp",
+        "unordered_map": "cpp",
+        "fstream": "cpp",
+        "ostream": "cpp",
+        "ios": "cpp",
+        "numeric": "cpp",
+        "typeinfo": "cpp",
+        "atomic": "cpp"
+    }
+}
